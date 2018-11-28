@@ -35,16 +35,6 @@ public class mainDash extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        login = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         register = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -57,95 +47,22 @@ public class mainDash extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         pos = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        login = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new java.awt.CardLayout());
-
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Exit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Employee ID");
-
-        jLabel2.setText("Password");
-
-        jLabel3.setText("Dash For Cash POS System");
-
-        jButton5.setText("  Register");
-
-        jLabel8.setText("welcome!");
-
-        javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
-        login.setLayout(loginLayout);
-        loginLayout.setHorizontalGroup(
-            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginLayout.createSequentialGroup()
-                        .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(loginLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(loginLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1))))
-                    .addGroup(loginLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
-        );
-        loginLayout.setVerticalGroup(
-            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel3)
-                .addGap(36, 36, 36)
-                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(31, 31, 31)
-                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-
-        jPanel2.add(login, "login");
 
         jButton3.setText("Submit");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +139,7 @@ public class mainDash extends javax.swing.JFrame {
         pos.setLayout(posLayout);
         posLayout.setHorizontalGroup(
             posLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 514, Short.MAX_VALUE)
         );
         posLayout.setVerticalGroup(
             posLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,71 +148,122 @@ public class mainDash extends javax.swing.JFrame {
 
         jPanel2.add(pos, "card4");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Exit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Employee ID");
+
+        jLabel2.setText("Password");
+
+        jLabel3.setText("Dash For Cash POS System");
+
+        jButton5.setText("  Register");
+
+        jLabel8.setText("welcome!");
+
+        javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
+        login.setLayout(loginLayout);
+        loginLayout.setHorizontalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(loginLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(loginLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField1))))
+                    .addGroup(loginLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        loginLayout.setVerticalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel3)
+                .addGap(36, 36, 36)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(31, 31, 31)
+                .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton5))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
-        jButton6.setText("jButton6");
+        jPanel2.add(login, "login");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(402, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 240, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 241, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(262, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 101, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 102, Short.MAX_VALUE)))
-        );
+        jButton7.setText("jButton7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("jButton7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 4, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 5, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 67, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 16, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 16, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -333,6 +301,30 @@ public class mainDash extends javax.swing.JFrame {
             jLabel8.setText("Wrong Password Or Employee ID. Please Try Again.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+               // TODO add your handling code here:
+                 // TODO add your handling code here:
+        int i= 0;
+        DatabaseManager authenticate = new DatabaseManager();
+        try{
+            int id = Integer.valueOf(jTextField1.getText());
+            String password = new String(jPasswordField1.getPassword());
+            i = authenticate.authenticate(id, password);
+        }catch(Exception e){
+            jLabel8.setText("Wrong!");
+        }
+        if(i >0){
+            //switch panel to pos system
+            CardLayout card = (CardLayout)jPanel2.getLayout();
+            card.show(jPanel2,"card2");
+            card.next(jPanel2);
+
+        }else{
+            //Autentication failed
+            jLabel8.setText("Wrong Password Or Employee ID. Please Try Again.");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,7 +368,8 @@ public class mainDash extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -385,9 +378,7 @@ public class mainDash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;

@@ -97,12 +97,12 @@ public class DatabaseManager {
              }
     }
  return 0;}
-    public SalesTransaction retriveSalesData(int saleId){
+    public Order retriveSalesData(int saleId){
         Connection connection = null;
         PreparedStatement registerCashier = null;
+        Order oldSales = new Order();
         
-        total =saleTotal;
-        status1=status;
+        double price;
         
         
       try{
@@ -115,7 +115,7 @@ public class DatabaseManager {
           ResultSet rs = statement.executeQuery("SELECT * FROM emp WHERE (id ="+saleId);
          //send query
          while(rs.next()){
-             
+             newSales = new Trans
          }
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
@@ -128,6 +128,6 @@ public class DatabaseManager {
                 System.exit(1);
              }
       }
-      
+      return
     }
 }
