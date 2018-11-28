@@ -100,34 +100,32 @@ public class DatabaseManager {
     public Order retriveSalesData(int saleId){
         Connection connection = null;
         PreparedStatement registerCashier = null;
-        Order oldSales = new Order();
-        
-        double price;
-        
-        
+        Order getSales = new Order();
       try{
           //Establish Connection to Dash for Cash database
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
           
-         Statement statement = connection.createStatement();
-          //Excute Query
-          ResultSet rs = statement.executeQuery("SELECT * FROM emp WHERE (id ="+saleId);
-         //send query
-         while(rs.next()){
-             newSales = new Trans
+         SerializeObject getOrder = new SerializeObject(); 
+         
+         try{
+         //Retrive Order from database
+         getSales = (Order)getOrder.readJavaObject(connection, saleId);
+         }catch(Exception e){
+             System.exit(0);
          }
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
                     System.exit(1);
       }finally{
          try {
+             //close all
             registerCashier.close();
             connection.close();
          } catch (SQLException ex) {
                 System.exit(1);
              }
       }
-      return
+      return getSales;
     }
 }
