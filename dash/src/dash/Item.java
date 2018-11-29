@@ -12,16 +12,13 @@ package dash;
 public class Item {
     private String itemName;
     private double itemPrice;
-    private char itemSize;// size will range from s,m,l,xl
-    private char itemType;// type will be liquids or solids like coffee or muffins
+    private char[] itemSize;// size will range from s,m,l,xl
+    private char[] itemType;// type will be liquids or solids like coffee or muffins
     
     
     //contructor
-    public Item(String name,double price,char size,char type){
-         itemName = name;
-         itemPrice = price;
-         itemSize = size;
-         itemType = type;
+    public Item(){
+         
     }
     
     //return methods
@@ -31,10 +28,10 @@ public class Item {
      public String getItemName(){
       return itemName;
     }
-      public char getItemType (){
+      public char[] getItemType (){
       return itemType;
     }
-       public char getItemSize(){
+       public char[] getItemSize(){
       return itemSize;
     }
        
@@ -45,11 +42,15 @@ public class Item {
     public void setItemName(String name){
       itemName= name;
     }
-    public void setItemType(char type){
+    public void setItemType(char[] type){ //Possible item types
       itemType = type;
     }
-    public void setItemSize(char size){
+    public void setItemSizes(char[] size){ //Possible item Sizes
       itemSize = size;
+    }
+    public String displayItem(){
+    String itemDiscription =itemName+" "+itemSize+" $"+itemPrice;
+    return itemDiscription;
     }
        
     

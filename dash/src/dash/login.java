@@ -148,7 +148,8 @@ public class login extends javax.swing.JDialog {
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        DatabaseManager auth = new DatabaseManager();
+     //Testing POS System without login in. REMOVE THESE COMMENTS LATER
+        /*   DatabaseManager auth = new DatabaseManager();
         try{
             //Get id and password from both fields
         employeeId = Integer.valueOf(jTextField5.getText());
@@ -157,13 +158,13 @@ public class login extends javax.swing.JDialog {
             jLabel1.setText("Something went wrong!");
         }
         int check = auth.authenticate(employeeId, password);
-        if(check>0){
+        if(check>0){*/
                 PosSystem frame = new PosSystem();
                 frame.setVisible(true);
                 dispose();
-        }else{
+       /* }else{
             jLabel1.setText("Incorrect EmployeeID or password. Please try again."+check);
-        }
+        }*/
     }//GEN-LAST:event_jButton2ActionPerformed
     public int getEmployeeId(){
          return employeeId;

@@ -16,9 +16,9 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 
 /**
- * Excerpts taken from URL:
+ * Some code excerpts taken from URL:
 https://www.developer.com/java/data/manipulating-a-database-with-jdbc.html
-* @author navi
+* @author Navjot
  */
 public class DatabaseManager {
     
@@ -137,5 +137,31 @@ public class DatabaseManager {
              }
       }
       return getSales;
+    }
+    public Item retriveItem(int id){
+    //Create item
+    Item product= new Item();
+    
+    //Prepared connection and preparedstatement for query
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    String sqlQuery = "SELECT * FROM Employees WHERE (id=?)";
+    
+    try{
+         connection = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWD);
+         
+         preparedStatement = connection.prepareStatement(sqlQuery);
+         preparedStatement.setInt(1, id);
+         ResultSet rs = preparedStatement.executeQuery();
+         while(rs.next()){
+             product.setItemName(rs.getString("itemName"));
+             product.setItemPrice(rs.getDouble("itemPrice"));
+             product.setItemSizes(rs.getString("itemSizes").toCharArray());//Gets string from server and splits them into character array
+             product.setItemType(rs.getString("itemType").toCharArray());
+         }
+    }catch(SQLException sqlex){   //catch SQL error messeage
+        System.err.println(sqlex);
+    }  
+    return product;
     }
 }

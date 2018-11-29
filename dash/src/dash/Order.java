@@ -33,10 +33,11 @@ public class Order {
     }
     
     //change price 
-    public void changePrice(Item item,double price,int id){
+    public void changePrice(Item item,double price,int id,int index){
         Item changePriceItem =itemList.get(id); //Retrive item in question
-        changePriceItem.setItemPrice(price);    //Change the value(Price)
-        itemList.set(id, changePriceItem);      //Replace old item with new one
+        changePriceItem.setItemPrice(price);
+        //Change the value(Price)
+        itemList.set(index, changePriceItem);      //Replace old item with new one
     }
     
     //return Order as a array of items
