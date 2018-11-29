@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 
 /**
+ * Excerpts taken from URL:
 https://www.developer.com/java/data/manipulating-a-database-with-jdbc.html
 * @author navi
  */
