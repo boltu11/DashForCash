@@ -33,25 +33,26 @@ public class DatabaseManager {
     
     }
     
-    public void registerCashier(int id, String firstName, String lastName,String password){
+    public int registerCashier(String firstName, String lastName,String password){
       
       Connection connection = null;
       PreparedStatement registerCashier = null;
+      int empid = 100; //Starting employee is 100
       
       try{
           //Establish Connection to Dash for Cash database
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
-          
+       
           //Prepare statement to be send to database for query
-         registerCashier=connection.prepareStatement("INSERT INTO emp VALUES(?,?,?,?)");
-         registerCashier.setInt(1,id);
-         registerCashier.setString(2,firstName);
-         registerCashier.setString(3,lastName);
-         registerCashier.setString(4, password);
-
+         registerCashier=connection.prepareStatement("INSERT INTO Employees(firstName,lastName,password,isManager) VALUES(?,?,?,?)",Statement.RETURN_GENERATED_KEYS);
+   
+         registerCashier.setString(1, firstName);
+         registerCashier.setString(2, lastName);
+         registerCashier.setString(3, password);
+         registerCashier.setInt(4, 0);
          //send query
-          registerCashier.execute();
+        empid=  empid+registerCashier.executeUpdate();
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
                     System.exit(1);
@@ -64,40 +65,48 @@ public class DatabaseManager {
              }
          }
         
-    }
+  return empid;   }
     public int authenticate(int empId, String password){
       Connection connection = null;
-      PreparedStatement registerCashier = null;
-      int isManager= 0;
-      
       try{
           //Establish Connection to Dash for Cash database
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
-          Statement statement = connection.createStatement();
+    
           //Excute Query
-          ResultSet rs = statement.executeQuery("SELECT EXITS( SELECT id, password,isManager FROM emp WHERE (id ="+empId+"AND"
-                  + "password = "+password);
-          if(!rs.next()){
+          String sqlQuery = "SELECT EXISTS (SELECT  *  FROM Employees WHERE (id= ? AND password=?))";
+       
+          PreparedStatement prepared = connection.prepareStatement(sqlQuery);
+          prepared.setInt(1, empId);
+          prepared.setString(2, password);
+          ResultSet rs = prepared.executeQuery();
+          rs.next();
+          if(rs.getInt(1)==0){
+              rs.getInt(1);
+              
               return 0;
           }else{ // Manager check
-              while(rs.next()){
-                  isManager = rs.getInt("isManager");
-              }if(isManager == 1){
-              return 2;} else{
+              String managerQuery = "SELECT  *  FROM Employees WHERE (id= ?)";
+              PreparedStatement preparedManager = connection.prepareStatement(managerQuery);
+              preparedManager.setInt(1, empId);
+              ResultSet newRs = preparedManager.executeQuery();
+              newRs.next();
+              if(newRs.getInt("isManager")==1){
+                    return 2;} else{
               return 1;}
           }
-      }catch(Exception e){
-          System.exit(0);
+      }catch(SQLException ex){
+          System.err.println(ex);
+          return -1;
       }finally{
          try {
-            registerCashier.close();
+ 
             connection.close();
          } catch (SQLException ex) {
                 System.exit(1);
              }
     }
- return 0;}
+}
     public Order retriveSalesData(int saleId){
         Connection connection = null;
         PreparedStatement registerCashier = null;
