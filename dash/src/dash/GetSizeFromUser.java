@@ -129,28 +129,28 @@ public class GetSizeFromUser extends javax.swing.JDialog {
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
          if((evt.getActionCommand().compareTo("Large"))==0){
-           size = 3;
+           size = 101;
         }
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
         if((evt.getActionCommand().compareTo("X-Large"))==0){
-           size = 1;
+           size = 100;
         }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
          if((evt.getActionCommand().compareTo("Medium"))==0){
-           size = 4;
+           size = 102;
         }
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
          if((evt.getActionCommand().compareTo("Small"))==0){
-           size = 5;
+           size = 103;
         }
     }//GEN-LAST:event_jRadioButton4ActionPerformed
     public int giveSize(){

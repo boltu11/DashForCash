@@ -34,7 +34,8 @@ public class Order {
     
     //change price 
     public void changePrice(Item item,double price,int id,int index){
-        Item changePriceItem =itemList.get(id); //Retrive item in question
+        Item changePriceItem =itemList.get(index); //Retrive item in question
+        System.out.println(changePriceItem.displayItem());
         changePriceItem.setItemPrice(price);
         //Change the value(Price)
         itemList.set(index, changePriceItem);      //Replace old item with new one
@@ -46,7 +47,7 @@ public class Order {
     Item[] items = itemList.toArray(new Item[itemList.size()]); 
     return items;
     }
-    
+  
     //Get total Price
     public double getTotal(){
     double total =0;

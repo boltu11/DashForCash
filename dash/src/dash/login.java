@@ -44,6 +44,7 @@ public class login extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
 
         jLabel10.setText("Employee ID");
 
@@ -96,8 +97,8 @@ public class login extends javax.swing.JDialog {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(64, 64, 64)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -131,6 +132,7 @@ public class login extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -149,7 +151,7 @@ public class login extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
      //Testing POS System without login in. REMOVE THESE COMMENTS LATER
-        /*   DatabaseManager auth = new DatabaseManager();
+        DatabaseManager auth = new DatabaseManager();
         try{
             //Get id and password from both fields
         employeeId = Integer.valueOf(jTextField5.getText());
@@ -158,13 +160,13 @@ public class login extends javax.swing.JDialog {
             jLabel1.setText("Something went wrong!");
         }
         int check = auth.authenticate(employeeId, password);
-        if(check>0){*/
+        if(check>0){
                 PosSystem frame = new PosSystem();
                 frame.setVisible(true);
                 dispose();
-       /* }else{
+        }else{
             jLabel1.setText("Incorrect EmployeeID or password. Please try again."+check);
-        }*/
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
     public int getEmployeeId(){
          return employeeId;

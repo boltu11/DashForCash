@@ -28,14 +28,29 @@ public class DatabaseManager {
    static final String DB_DRV =  "com.mysql.jdbc.Driver";
    static final String DB_USER = "foo";
    static final String DB_PASSWD = "bar";
+   static Connection connection = null;
     
     public DatabaseManager(){
     
     }
+    public void setCon(){
+            try {
+            connection = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWD);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }    
+    }
+    public static void conClose() {
+        try {
+            connection.setAutoCommit(true);
+            connection.close();
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+    }
     
     public int registerCashier(String firstName, String lastName,String password){
       
-      Connection connection = null;
       PreparedStatement registerCashier = null;
       int empid = 100; //Starting employee is 100
       
@@ -67,7 +82,7 @@ public class DatabaseManager {
         
   return empid;   }
     public int authenticate(int empId, String password){
-      Connection connection = null;
+      
       try{
           //Establish Connection to Dash for Cash database
           connection=DriverManager.getConnection
@@ -108,7 +123,7 @@ public class DatabaseManager {
     }
 }
     public Order retriveOrder(int saleId){
-        Connection connection = null;
+       
         PreparedStatement registerCashier = null;
         Order getSales = new Order();
       try{
@@ -116,11 +131,11 @@ public class DatabaseManager {
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
           
-         SerializeObject getOrder = new SerializeObject(); 
+          
         
          try{
          //Retrive Order from database
-         getSales = (Order)getOrder.readJavaObject(connection, saleId);
+//         getSales = (Order)getOrder.readJavaObject(connection, saleId);
          }catch(Exception e){
              System.exit(0);
          }
@@ -142,8 +157,7 @@ public class DatabaseManager {
     //Create item
     Item product= new Item();
     
-    //Prepared connection and preparedstatement for query
-    Connection connection = null;
+    //Prepared connection and preparedstatement
     PreparedStatement preparedStatement = null;
     String sqlQuery = "SELECT * FROM Items WHERE (id=?)";
     
@@ -163,18 +177,18 @@ public class DatabaseManager {
     }  
     return product;
     }
-    public int saveOrder(Order order){
+    public int saveOrder(Object order){
+       String WRITE_OBJECT_SQL = "INSERT INTO Orders(order_objects) VALUES (?)";
           int i =0;
-          Connection connection = null;
       try{
           //Establish Connection to Dash for Cash database
-          connection=DriverManager.getConnection
-            (DB_URL,DB_USER,DB_PASSWD);
-         //Serialize and save order 
-         SerializeObject serializeO = new SerializeObject();
-         serializeO.writeJavaObject(connection, order);    
-      }catch(Exception Ex){
-               System.err.println(Ex);
+          PreparedStatement pstmt = connection.prepareStatement(WRITE_OBJECT_SQL);
+         // set input parameters
+         pstmt.setObject(1, order);
+         pstmt.executeUpdate();
+         connection.commit();
+      }catch(SQLException Ex){
+               Ex.printStackTrace();
                     System.exit(1);
       }finally{
          try {

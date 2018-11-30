@@ -8,13 +8,22 @@ package dash;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.sql.Connection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
 /**
  *
  * @author navi
  */
 public class mainDash extends javax.swing.JFrame {
-  
+  static final String DB_URL =  "jdbc:mysql://localhost:3306/test";
+   static final String DB_DRV =  "com.mysql.jdbc.Driver";
+   static final String DB_USER = "foo";
+   static final String DB_PASSWD = "bar";
     
  
     /**
@@ -127,7 +136,8 @@ public class mainDash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
+        
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -135,7 +145,6 @@ public class mainDash extends javax.swing.JFrame {
         // TODO add your handling code here:
         managerLogin dialog = new managerLogin(new javax.swing.JFrame(),true);
         dialog.setVisible(true);
-        
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
