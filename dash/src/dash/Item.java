@@ -12,8 +12,7 @@ package dash;
 public class Item {
     private String itemName;
     private double itemPrice;
-    private char[] itemSize;// size will range from s,m,l,xl
-    private char[] itemType;// type will be liquids or solids like coffee or muffins
+    private int itemType;// type will be liquids or solids like coffee or muffins
     
     
     //contructor
@@ -28,12 +27,10 @@ public class Item {
      public String getItemName(){
       return itemName;
     }
-      public char[] getItemType (){
+      public int getItemType (){
       return itemType;
     }
-       public char[] getItemSize(){
-      return itemSize;
-    }
+     
        
      //set methods
     public void setItemPrice(double price){
@@ -42,14 +39,11 @@ public class Item {
     public void setItemName(String name){
       itemName= name;
     }
-    public void setItemType(char[] type){ //Possible item types
+    public void setItemType(int type){ //Possible item types
       itemType = type;
     }
-    public void setItemSizes(char[] size){ //Possible item Sizes
-      itemSize = size;
-    }
     public String displayItem(){
-    String itemDiscription =itemName+" "+itemSize+" $"+itemPrice;
+    String itemDiscription =itemName+" $"+itemPrice;
     return itemDiscription;
     }
        

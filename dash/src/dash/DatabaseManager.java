@@ -107,7 +107,7 @@ public class DatabaseManager {
              }
     }
 }
-    public Order retriveSalesData(int saleId){
+    public Order retriveOrder(int saleId){
         Connection connection = null;
         PreparedStatement registerCashier = null;
         Order getSales = new Order();
@@ -117,7 +117,7 @@ public class DatabaseManager {
             (DB_URL,DB_USER,DB_PASSWD);
           
          SerializeObject getOrder = new SerializeObject(); 
-         
+        
          try{
          //Retrive Order from database
          getSales = (Order)getOrder.readJavaObject(connection, saleId);
@@ -145,7 +145,7 @@ public class DatabaseManager {
     //Prepared connection and preparedstatement for query
     Connection connection = null;
     PreparedStatement preparedStatement = null;
-    String sqlQuery = "SELECT * FROM Employees WHERE (id=?)";
+    String sqlQuery = "SELECT * FROM Items WHERE (id=?)";
     
     try{
          connection = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWD);
@@ -156,12 +156,33 @@ public class DatabaseManager {
          while(rs.next()){
              product.setItemName(rs.getString("itemName"));
              product.setItemPrice(rs.getDouble("itemPrice"));
-             product.setItemSizes(rs.getString("itemSizes").toCharArray());//Gets string from server and splits them into character array
-             product.setItemType(rs.getString("itemType").toCharArray());
+             product.setItemType(rs.getInt("itemType"));
          }
     }catch(SQLException sqlex){   //catch SQL error messeage
         System.err.println(sqlex);
     }  
     return product;
+    }
+    public int saveOrder(Order order){
+          int i =0;
+          Connection connection = null;
+      try{
+          //Establish Connection to Dash for Cash database
+          connection=DriverManager.getConnection
+            (DB_URL,DB_USER,DB_PASSWD);
+         //Serialize and save order 
+         SerializeObject serializeO = new SerializeObject();
+         serializeO.writeJavaObject(connection, order);    
+      }catch(Exception Ex){
+               System.err.println(Ex);
+                    System.exit(1);
+      }finally{
+         try {
+            connection.close();
+         } catch (SQLException ex) {
+                System.exit(1);
+             }
+         }
+          return i;
     }
 }

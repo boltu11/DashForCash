@@ -15,18 +15,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class SerializeObject {
-  static final String WRITE_OBJECT_SQL = "INSERT INTO Sales(Order) VALUES (?)";
-  static final String READ_OBJECT_SQL = "SELECT Order FROM Sales WHERE id = ?";
+  static final String WRITE_OBJECT_SQL = "INSERT INTO Orders(order_objects) VALUES (?)";
+  static final String READ_OBJECT_SQL = "SELECT order_objects FROM Orders WHERE id = ?";
   public SerializeObject(){
   }
 
    public int writeJavaObject(Connection conn, Object object) throws Exception {
-    String className = object.getClass().getName();
     PreparedStatement pstmt = conn.prepareStatement(WRITE_OBJECT_SQL);
 
     // set input parameters
-    pstmt.setString(1, className);
-    pstmt.setObject(2, object);
+    pstmt.setObject(1, object);
     pstmt.executeUpdate();
 
     // get the generated key for the id
@@ -47,7 +45,6 @@ public class SerializeObject {
     ResultSet rs = pstmt.executeQuery();
     rs.next();
     Object object = rs.getObject(1);    
-    String className = object.getClass().getName();
     rs.close();
     pstmt.close();
     return object;

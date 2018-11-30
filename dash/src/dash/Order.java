@@ -28,8 +28,8 @@ public class Order {
     } 
     
     //remove items with paticular id on the list
-    public void removeItem(Item item,int id){
-         itemList.remove(id);
+    public void removeItem(int index){
+         itemList.remove(index);
     }
     
     //change price 
