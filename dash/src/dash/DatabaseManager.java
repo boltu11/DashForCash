@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.util.*;
+import java.io.*;
 
 /**
  * Some code excerpts taken from URL:
@@ -33,22 +35,6 @@ public class DatabaseManager {
     public DatabaseManager(){
     
     }
-    public void setCon(){
-            try {
-            connection = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWD);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }    
-    }
-    public static void conClose() {
-        try {
-            connection.setAutoCommit(true);
-            connection.close();
-        } catch (SQLException ex) {
-            System.err.println(ex);
-        }
-    }
-    
     public int registerCashier(String firstName, String lastName,String password){
       
       PreparedStatement registerCashier = null;
@@ -124,28 +110,30 @@ public class DatabaseManager {
 }
     public Order retriveOrder(int saleId){
        
-        PreparedStatement registerCashier = null;
-        Order getSales = new Order();
+        PreparedStatement preparedConnection = null;
+        Order getSales = null;
       try{
           //Establish Connection to Dash for Cash database
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
-          
-          
-        
+         preparedConnection = connection.prepareStatement("SELECT order_objects FROM Orders WHERE (id=?)");
+         preparedConnection.setInt(1, saleId);
+         ResultSet rs = preparedConnection.executeQuery();
+         rs.next();
          try{
-         //Retrive Order from database
-//         getSales = (Order)getOrder.readJavaObject(connection, saleId);
-         }catch(Exception e){
-             System.exit(0);
+             ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream((byte[]) rs.getObject(1)));
+         getSales = (Order) in.readObject();
+         }catch(Exception io){
+             System.err.println(io);
          }
+           
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
                     System.exit(1);
       }finally{
          try {
              //close all
-            registerCashier.close();
+            preparedConnection.close();
             connection.close();
          } catch (SQLException ex) {
                 System.exit(1);
@@ -177,15 +165,15 @@ public class DatabaseManager {
     }  
     return product;
     }
-    public int saveOrder(Object order){
+    public int saveOrder(Order order){
        String WRITE_OBJECT_SQL = "INSERT INTO Orders(order_objects) VALUES (?)";
           int i =0;
       try{
           //Establish Connection to Dash for Cash database
-          PreparedStatement pstmt = connection.prepareStatement(WRITE_OBJECT_SQL);
+          PreparedStatement pstmt = connection.prepareStatement(WRITE_OBJECT_SQL,Statement.RETURN_GENERATED_KEYS);
          // set input parameters
          pstmt.setObject(1, order);
-         pstmt.executeUpdate();
+         i =pstmt.executeUpdate();
          connection.commit();
       }catch(SQLException Ex){
                Ex.printStackTrace();

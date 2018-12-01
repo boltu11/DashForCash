@@ -5,12 +5,13 @@
  */
 package dash;
 
+import java.io.Serializable;
 import java.util.*;
 /**
  *
  * @author navi
  */
-public class Order {
+public class Order implements Serializable {
     int orderId;
     int itemId;
     List<Item>itemList=new ArrayList<>(); //List of all items

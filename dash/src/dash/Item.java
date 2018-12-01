@@ -9,7 +9,8 @@ package dash;
  *
  * @author nav
  */
-public class Item {
+import java.io.Serializable;
+public class Item implements Serializable{
     private String itemName;
     private double itemPrice;
     private int itemType;// type will be liquids or solids like coffee or muffins
