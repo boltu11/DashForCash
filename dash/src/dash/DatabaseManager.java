@@ -53,7 +53,10 @@ public class DatabaseManager {
          registerCashier.setString(3, password);
          registerCashier.setInt(4, 0);
          //send query
-        empid=  empid+registerCashier.executeUpdate();
+        registerCashier.executeUpdate();
+        ResultSet rs = registerCashier.getGeneratedKeys();
+         rs.next();
+         empid = rs.getInt(1);
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
                     System.exit(1);
