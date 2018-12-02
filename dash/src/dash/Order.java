@@ -26,7 +26,12 @@ public class Order implements Serializable {
        for(int i = 1;i<=quantity;i++){
         itemList.add(item);
        }
-    } 
+    }
+    
+    //get item from the item list
+    public Item getItem(int index){
+          return itemList.get(index);
+    }
     
     //remove items with paticular id on the list
     public void removeItem(int index){

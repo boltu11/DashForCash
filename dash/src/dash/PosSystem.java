@@ -8,6 +8,8 @@ package dash;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.text.*;
+
 
 /**
  *
@@ -63,6 +65,8 @@ public class PosSystem extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -148,7 +152,7 @@ public class PosSystem extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         jLabel3.setText("Hotkeys:");
@@ -165,7 +169,7 @@ public class PosSystem extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("NIL");
+        jLabel4.setText("0.00");
 
         jButton6.setText("Finalize");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -221,11 +225,13 @@ public class PosSystem extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Tax( 7%):");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("Taxable Amount:");
 
-        jLabel7.setText("jLabel7");
+        jLabel8.setText("0.00");
+
+        jLabel9.setText("0.00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,23 +258,29 @@ public class PosSystem extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                             .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(61, Short.MAX_VALUE))
+                        .addContainerGap(117, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(82, 82, 82)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89)
                         .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,38 +316,53 @@ public class PosSystem extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5))
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel9))))
+                .addGap(23, 23, 23))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //get total and truncate it to two decimal format while also calculating taxes and total including tax
+    private void setTotal(double total){
+        jLabel8.setText(String.valueOf( new DecimalFormat("#.##").format(total)));
+        jLabel9.setText(String.valueOf( new DecimalFormat("#.##").format(0.07*total)));
+        jLabel4.setText(String.valueOf( new DecimalFormat("#.##").format(1.07*total)));
+    }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         int id =1;
         int size =0;
+        //Display diaglog to get user to input size.
         GetSizeFromUser dialog =new GetSizeFromUser(new javax.swing.JFrame(),true);
         dialog.setVisible(true);
+        //Datbasemanager
        DatabaseManager getItem = new DatabaseManager();
+       //get size
        id = dialog.size;
-       System.out.println(id);
        
+              
        order.addItems(getItem.retriveItem(id), 1);
         switch (id-100){
             case 0: dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
-                        System.out.println(id);
                     break;
             case 1: dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
                     break;
@@ -344,28 +371,35 @@ public class PosSystem extends javax.swing.JFrame {
             case 3: dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
                     break;
         }
-        jLabel4.setText(String.valueOf(order.getTotal()));
+        
+        setTotal(order.getTotal());
    
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-       
+       //Get id from user
        getPID dialog =new getPID(new javax.swing.JFrame(),true);
        dialog.setVisible(true);
        
+       //get id
        int id =dialog.pid;
        order = dManager.retriveOrder(id);
        dlm.clear();
+       //Iterate items in saved order and display them on the screen.
        Item[] items =order.returnOrder();
         for(int i =0;i<items.length;i++){
            dlm.addElement(items[i].displayItem());
-           
        }
+        setTotal(order.getTotal());
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        finalizeOrder dialog =new finalizeOrder(new javax.swing.JFrame(),true,order.getTotal());
+        dialog.setVisible(true);
+        
+  
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -379,19 +413,23 @@ public class PosSystem extends javax.swing.JFrame {
         //Price Change
         DatabaseManager getItem = new DatabaseManager();
         //Get the selected Text
-        String findItem =dlm.get(jList1.getSelectedIndex());
-        System.out.println(findItem);
+        String getItemString =dlm.get(jList1.getSelectedIndex());
+        System.out.println(getItemString);
         //Get the item id from text.
-        int id = Integer.valueOf(findItem.substring(0, 4).trim());
+        int id = Integer.valueOf(getItemString.substring(0, 4).trim());
         
-        //Construct dialog for new price
+        //Construct dialog to get new price
         priceChange dialog =new priceChange(new javax.swing.JFrame(),true);
        dialog.setVisible(true);
         double price =dialog.price;
+   
+        
        
         //Reflect changes in Order and pos system
         order.changePrice( getItem.retriveItem(id), price, id, jList1.getSelectedIndex());
-        dlm.set(jList1.getSelectedIndex(), id+" "+getItem.retriveItem(id).displayItem());
+        dlm.set(jList1.getSelectedIndex(), id+" "+order.getItem(jList1.getSelectedIndex()).getItemName()+" $"+price+"*");
+        
+           setTotal(order.getTotal());
         
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -400,13 +438,13 @@ public class PosSystem extends javax.swing.JFrame {
         //find item
         getPID dialog = new getPID(new javax.swing.JFrame(),true);
         dialog.setVisible(true);
-        int pid =dialog.pid();
-        Item returnedItem;
+        int id =dialog.pid();
+        Item returnedItem = null;
         DatabaseManager getItem = new DatabaseManager();
-        returnedItem = getItem.retriveItem(pid);
+        returnedItem = getItem.retriveItem(id);
         order.addItems(returnedItem, 1);
-        dlm.addElement(returnedItem.getItemName());
-        jLabel4.setText(String.valueOf(order.getTotal()));
+        dlm.addElement(id+" "+returnedItem.displayItem());
+        setTotal(order.getTotal());
 
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -416,7 +454,7 @@ public class PosSystem extends javax.swing.JFrame {
         DatabaseManager getItem = new DatabaseManager();
         order.addItems(getItem.retriveItem(id), 1);
         dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
-        jLabel4.setText(String.valueOf(order.getTotal()));
+        setTotal(order.getTotal());
         
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -426,7 +464,7 @@ public class PosSystem extends javax.swing.JFrame {
         DatabaseManager getItem = new DatabaseManager();
         order.addItems(getItem.retriveItem(id), 1);
         dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
-        jLabel4.setText(String.valueOf(order.getTotal()));
+        setTotal(order.getTotal());
         
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -449,7 +487,7 @@ public class PosSystem extends javax.swing.JFrame {
             case 4: dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
                     break;
         }
-      jLabel4.setText(String.valueOf(order.getTotal()));
+      setTotal(order.getTotal());
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -458,8 +496,7 @@ public class PosSystem extends javax.swing.JFrame {
         DatabaseManager getItem = new DatabaseManager();
         order.addItems(getItem.retriveItem(id), 1);
         dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
-        jLabel4.setText(String.valueOf(order.getTotal()));
-        
+        setTotal(order.getTotal());
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -468,24 +505,22 @@ public class PosSystem extends javax.swing.JFrame {
         DatabaseManager getItem = new DatabaseManager();
         order.addItems(getItem.retriveItem(id), 1);
         dlm.addElement(id+" "+getItem.retriveItem(id).displayItem());
-        jLabel4.setText(String.valueOf(order.getTotal()));
-        
+        setTotal(order.getTotal());
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
         order.removeItem(jList1.getSelectedIndex());
         dlm.remove(jList1.getSelectedIndex());
-        jLabel4.setText(String.valueOf(order.getTotal()));
-        
+        setTotal(order.getTotal());
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
         
         DatabaseManager saveO = new DatabaseManager();
-        int id =saveO.saveOrder(order);
-        jLabel7.setText(String.valueOf(id));
+        int ids =saveO.saveOrder(order);
+        jLabel7.setText("Success! Order saved with ID "+String.valueOf(ids));
         dlm.clear();
     }//GEN-LAST:event_jButton19ActionPerformed
 
@@ -517,6 +552,8 @@ public class PosSystem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

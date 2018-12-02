@@ -113,20 +113,24 @@ public class DatabaseManager {
         PreparedStatement preparedConnection = null;
         Order getSales = null;
       try{
-          //Establish Connection to Dash for Cash database
+          //Establish Connection to Dash for Cash database and Prepare statement query
           connection=DriverManager.getConnection
             (DB_URL,DB_USER,DB_PASSWD);
          preparedConnection = connection.prepareStatement("SELECT order_objects FROM Orders WHERE (id=?)");
          preparedConnection.setInt(1, saleId);
          ResultSet rs = preparedConnection.executeQuery();
+         
+         //Get result
          rs.next();
          try{
+             /*Get BLOB from database and cast it to Byte array then input it into byte array stream object and then finally 
+             *input it into object stream. Then read the input stream with readobject() which will return out object(Order) back
+             */
              ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream((byte[]) rs.getObject(1)));
          getSales = (Order) in.readObject();
          }catch(Exception io){
              System.err.println(io);
          }
-           
       }catch(SQLException sqlEx){
           sqlEx.printStackTrace();
                     System.exit(1);
@@ -173,8 +177,12 @@ public class DatabaseManager {
           PreparedStatement pstmt = connection.prepareStatement(WRITE_OBJECT_SQL,Statement.RETURN_GENERATED_KEYS);
          // set input parameters
          pstmt.setObject(1, order);
-         i =pstmt.executeUpdate();
-         connection.commit();
+         //insert into database table.
+         pstmt.executeUpdate();
+         ResultSet rs = pstmt.getGeneratedKeys();
+         rs.next();
+         i = rs.getInt(1);
+         
       }catch(SQLException Ex){
                Ex.printStackTrace();
                     System.exit(1);

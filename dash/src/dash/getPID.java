@@ -42,14 +42,14 @@ public class getPID extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Enter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Enter Product Code");
+        jLabel1.setText("Enter ID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
