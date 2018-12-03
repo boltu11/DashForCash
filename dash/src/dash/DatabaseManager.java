@@ -54,6 +54,7 @@ public class DatabaseManager {
          registerCashier.setInt(4, 0);
          //send query
         registerCashier.executeUpdate();
+        //get key from database
         ResultSet rs = registerCashier.getGeneratedKeys();
          rs.next();
          empid = rs.getInt(1);

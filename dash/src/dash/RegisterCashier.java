@@ -65,6 +65,12 @@ public class RegisterCashier extends javax.swing.JFrame {
 
         jLabel5.setText("Employee ID will automaticly generate.");
 
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,17 +138,24 @@ public class RegisterCashier extends javax.swing.JFrame {
         int empid=0;
         String firstName = jTextField1.getText();
         String lastName = jTextField2.getText();
-//        String password = jTextField3.getText();
-         String password = new String(jPasswordField1.getPassword());
+        String password = new String(jPasswordField1.getPassword());
+        //check to see if at least one field is empty
+        if((firstName.isEmpty() || lastName.isEmpty() || password.isEmpty())==true){
+               jLabel5.setText("Enter all information before submiting");
+        }else{
         empid=cashierReg.registerCashier(firstName,lastName,password);
-        jLabel5.setText("Success! The employee id for "+firstName+" is "+(empid+3) );
-        
+        jLabel5.setText("Success! The employee ID for "+firstName+" is "+(empid) );
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments

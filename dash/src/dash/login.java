@@ -79,7 +79,7 @@ public class login extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setText("Welcome!");
+        jLabel1.setText("                                   Welcome!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,10 +104,12 @@ public class login extends javax.swing.JDialog {
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +159,7 @@ public class login extends javax.swing.JDialog {
         employeeId = Integer.valueOf(jTextField5.getText());
         password   = new String(jPasswordField3.getPassword());
         }catch(Exception e){
-            jLabel1.setText("Something went wrong!");
+            jLabel1.setText("Pease Enter Employe!");
         }
         int check = auth.authenticate(employeeId, password);
         if(check>0){
@@ -165,7 +167,7 @@ public class login extends javax.swing.JDialog {
                 frame.setVisible(true);
                 dispose();
         }else{
-            jLabel1.setText("Incorrect EmployeeID or password. Please try again."+check);
+            jLabel1.setText("Incorrect EmployeID or password. Please try again."+check);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     public int getEmployeeId(){
